@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        div{border: 1px solid black;}
+        
+        .container{
+            width: 500px;
+            height: 400px;
+        }
+
+        .container .header{height: 20%;}
+        .container .navi{height: 15%;}
+        .container .body{height: 45%;}
+        .container .footer{height: 20%;}
+
+        .col{
+            float: left;
+            height: 100%;
+        }
+
+        #logo{width: 20%;}
+        #title{width: 60%;}
+        #reserve{width: 20%;}
+        #content{width: 70%;}
+        #side{width: 30%;}
+
+        .container .navi ul{
+            margin: 0px; 
+            padding: 0px;
+            height: 100%;
+        }
+
+        .container .navi li{
+            float: left;
+            list-style-type: none;
+            width: 25%;
+            text-align: center;
+            height: 100%;
+            line-height: 60px; 
+           /* 400height에 * 15%하면 구해진다*/
+           transition-duration: 1s;
+        }
+
+        .container .navi li:hover{
+            cursor: pointer;
+            background-color: pink;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="col" id="logo">logo</div>
+            <div class="col" id="title">title</div>
+            <div class="col" id="reserve">reserve</div>
+        </div>
+        <div class="navi">
+            <ul>
+                <li>home</li>
+                <li>about</li>
+                <li>profile</li>
+                <li>contact</li>
+            </ul>
+        </div>
+        <div class="body">
+            <div class="col" id="content">content</div>
+            <div class="col" id="side">side</div>
+        </div>
+        <div class="footer">footer</div>
+    </div>
+    
+</body>
+</html>

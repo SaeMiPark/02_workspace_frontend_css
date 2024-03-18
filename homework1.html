@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {box-sizing: border-box;}
+
+        div {border: 1px solid black}
+
+        .con {
+            width: 600px;
+            height: 500px;
+        }
+
+        .outcol, .incol{
+            float: left;
+            height: 100%;
+        }
+
+        #outcol1{
+            width: 10%;
+            background-color: green;
+        }
+
+        #outcol2{
+            width: 90%;
+        }
+
+        .outrow, .inrow{
+            height: 50%;
+             <!-- 넓이는 지정할 필요 없다
+                width: 100%; -->
+        }
+        
+        #incol1{
+            width: 40%;
+            background-color:red;
+        }
+
+        #incol2{
+            width: 60%;
+        }
+
+        #inrow1{
+            background-color: aquamarine;
+        }
+
+        #inrow2{
+            background-color: gray;
+        }
+
+        #incol3{
+            width: 60%;
+            background-color: pink;
+        }
+
+        #incol4{
+            width: 40%;
+            background-color: blue;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="outcol" id="outcol1"></div>
+        
+        <div class="outcol" id="outcol2">
+            <div class="outrow" id="outrow1">
+                <div class="incol" id="incol1"></div>
+                <div class="incol" id="incol2">
+                    <div class="inrow" id="inrow1"></div>
+                    <div class="inrow" id="inrow2"></div>
+                </div>
+            </div>
+            
+            <div class="outrow" id="outrow2">
+                <div class="incol" id="incol3"></div>
+                <div class="incol" id="incol4"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

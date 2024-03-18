@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        div{border: 1px solid black;}
+
+        .container{
+            width: 600px;
+            height: 500px;
+            margin: auto;  
+        }
+
+        .col{
+            float: left;
+            height: 100%;
+        }
+
+        .container .header{height: 20%;}
+        .container .navi{ height: 10%;}
+
+        ul{
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+        }
+
+
+        li{ 
+            float: left;
+            height: 100%;
+            width: 25%;
+            list-style-type: none;
+            text-align: center;
+            line-height: 45px;
+            transition-duration: 1s;
+            color: white;
+            background-color: black;
+        }
+
+        li:hover{
+            cursor: pointer;
+            background-color: gray;
+        }
+
+        .container .body{height: 50%;}
+        .container .footer{height: 20%;}
+
+        #col1, #col3{width: 15%;}
+
+        #col2{width: 70%;}
+
+        #col4{width: 70%;}
+
+        #col5{width: 30%;}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header" >
+            <div class="col" id="col1">logo</div>
+            <div class="col" id="col2">title</div>
+            <div class="col" id="col3">reserved</div>
+        </div>
+        <div class="navi">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Portfolio</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div class="body">
+            <div class="col" id="col4">contents</div>
+            <div class="col" id="col5">side</div>
+        </div>
+        <div class="footer">footer</div>
+    </div>
+</body>
+</html>

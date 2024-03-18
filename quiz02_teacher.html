@@ -1,0 +1,51 @@
+* 강사 풀이
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        div {
+            border: 1px solid black;
+        }
+
+        .container {
+            width: 400px;
+            height: 300px;
+        }
+
+        .row {
+            height: 50%;
+        }
+
+        .col {
+            /* float을 하는 순간 점으로 변하면서 
+            라인 독점이 해제되면서 width와 height모두를
+            설정해줘야 한다.
+             */
+            float: left;
+            width: 50%;
+            height: 100%; 
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row"></div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
