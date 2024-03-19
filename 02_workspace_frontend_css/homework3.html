@@ -4,31 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         *{box-sizing: border-box;}
-        div{border: 1px solid black;}
         
         .container{
-            width: 500px;
-            height: 400px;
+            margin: auto;
+            width: 800px;
+            height: 700px;
         }
 
         .container .header{height: 20%;}
-        .container .navi{height: 15%;}
-        .container .body{height: 45%;}
-        .container .footer{height: 20%;}
+        .container .navi{height: 7%;}
 
-        .col{
-            float: left;
-            height: 100%;
-        }
-
-        #logo{width: 20%;}
-        #title{width: 60%;}
-        #reserve{width: 20%;}
-        #content{width: 70%;}
-        #side{width: 30%;}
-
+        
         .container .navi ul{
             margin: 0px; 
             padding: 0px;
@@ -41,7 +30,7 @@
             width: 25%;
             text-align: center;
             height: 100%;
-            line-height: 60px; 
+            line-height: 45px; 
            /* 400height에 * 15%하면 구해진다*/
            transition-duration: 1s;
         }
@@ -51,29 +40,164 @@
             background-color: pink;
         }
 
+        .container .body{height: 60%;}
+        .container .footer{
+            height: 13%;
+            border-top: 1px solid black;
+        }
 
+        .col{
+            float: left;
+            height: 100%;
+        }
+
+        #logo{width: 20%;}
+        #title{width: 60%;}
+
+        #title_img{
+            padding-top: 10px;
+        }
+
+        #reserve{width: 20%;}
+        #content{width: 70%;}
+        #side{width: 30%; padding: 15px;}
+
+
+        
+    #loginbox{
+        height: 20%;
+        margin-bottom: 7px;
+    }
+
+    .hello{
+        text-align: center;
+        height: 40%;
+    }
+
+    .logarea{
+        height: 60%;
+    }
+
+    .inputarea{
+        width: 70%;
+    }
+
+    .idarea, .pwarea{
+        height: 50%;
+    }
+
+    .input{
+        width: 100%;
+        height: 100%
+    }
+
+    .idbtnarea{
+        width: 30%;
+        text-align: center;
+    }
+
+
+    .loginbtn{
+        margin-top: 10px;
+    }
+
+
+    #mailbox{
+        height: 50%;
+        margin-bottom: 5px;
+    }
+
+    .mail_title{
+        height: 15%;
+        text-align: center;
+    }
+
+    .mail_area{
+        height: 85%;
+        overflow-y: auto;
+    }
+
+    .mail_text{
+        text-align: center;
+        height: 35px;
+        border-left: 1px solid black;
+        border-bottom: 2px dashed black;
+    }
+
+    #adbox{
+        height: 30%;
+        background-color: pink;
+        border-radius: 5%;
+    }
+
+
+    .footer_endtext{
+        text-align: center;
+        line-height: 90px;
+    }
+
+       
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div class="col" id="logo">logo</div>
-            <div class="col" id="title">title</div>
-            <div class="col" id="reserve">reserve</div>
+            <div class="col" id="logo"></div>
+            <div class="col" id="title">
+                <img id="title_img" src="title.png">
+            </div>
+            <div class="col" id="reserve"></div>
         </div>
         <div class="navi">
             <ul>
-                <li>home</li>
-                <li>about</li>
-                <li>profile</li>
-                <li>contact</li>
+                <li><i class="fa-solid fa-house"></i> home</li>
+                <li><i class="fa-solid fa-user"></i></i> about</li>
+                <li><i class="fa-solid fa-magnifying-glass"></i> profile</li>
+                <li><i class="fa-solid fa-phone"></i> contact</li>
             </ul>
         </div>
         <div class="body">
-            <div class="col" id="content">content</div>
-            <div class="col" id="side">side</div>
+            <div class="col" id="content"></div>
+            <div class="col" id="side">
+                <div class="row" id="loginbox">
+                    <div class="hello">
+                        Good day. User
+                    </div>
+                    <div class="logarea">
+                        <div class="col inputarea">
+                            <div class="idarea"> 
+                                <input type="text" class="input" placeholder="ID">
+                            </div>
+                            <div class="pwarea">
+                                <input type="text" class="input" placeholder="PW">
+                            </div>
+                        </div>
+                        <div class="col idbtnarea">
+                            <button class="loginbtn">Login</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="mailbox">
+                    <div class="mail_title"><i class="fa-solid fa-envelope"></i> MAIL-BOX</div>
+                    <div class="mail_area">
+                        <div class="mail_text">1번째 메일입니다.</div>
+                        <div class="mail_text">2번째 메일입니다.</div>
+                        <div class="mail_text">3번째 메일입니다.</div>
+                        <div class="mail_text">4번째 메일입니다.</div>
+                        <div class="mail_text">5번째 메일입니다.</div>
+                        <div class="mail_text">6번째 메일입니다.</div>
+                        <div class="mail_text">7번째 메일입니다.</div>
+                        <div class="mail_text">8번째 메일입니다.</div>
+                    </div>
+                </div>
+                <div id="adbox">
+
+                </div>
+            </div>
         </div>
-        <div class="footer">footer</div>
+        <div class="footer">
+            <div class="footer_endtext">@Since 2024 03 19</div>
+        </div>
     </div>
     
 </body>
