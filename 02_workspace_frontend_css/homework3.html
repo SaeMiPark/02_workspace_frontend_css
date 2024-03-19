@@ -1,144 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        *{box-sizing: border-box;}
-        
-        .container{
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
             margin: auto;
             width: 800px;
             height: 700px;
         }
 
-        .container .header{height: 20%;}
-        .container .navi{height: 7%;}
+        .container .header {
+            height: 20%;
+        }
 
-        
-        .container .navi ul{
-            margin: 0px; 
+        .col {
+            float: left;
+            height: 100%;
+        }
+
+        #logo {
+            width: 20%;
+        }
+
+        #title {
+            width: 60%;
+        }
+
+        #title_img {
+            padding-top: 10px;
+        }
+
+        #reserve {
+            width: 20%;
+        }
+
+        .container .navi {
+            height: 7%;
+        }
+
+        .container .navi ul {
+            margin: 0px;
             padding: 0px;
             height: 100%;
         }
 
-        .container .navi li{
+        .container .navi li {
             float: left;
             list-style-type: none;
             width: 25%;
             text-align: center;
             height: 100%;
-            line-height: 45px; 
-           /* 400height에 * 15%하면 구해진다*/
-           transition-duration: 1s;
+            line-height: 45px;
+            /* 400height에 * 15%하면 구해진다*/
+            transition-duration: 1s;
         }
 
-        .container .navi li:hover{
+        .container .navi li:hover {
             cursor: pointer;
             background-color: pink;
         }
 
-        .container .body{height: 60%;}
-        .container .footer{
-            height: 13%;
+        .container .body {
+            height: 63%;
             border-top: 1px solid black;
+            border-bottom: 1px solid black;
         }
 
-        .col{
-            float: left;
+        #content {
+            width: 70%;
+        }
+
+        #side {
+            width: 30%;
+            padding: 20px;
+        }
+
+        #loginbox {
+            height: 20%;
+            margin-bottom: 7px;
+        }
+
+        .hello {
+            text-align: center;
+            height: 40%;
+        }
+
+        .logarea {
+            height: 60%;
+        }
+
+        .inputarea {
+            width: 70%;
+        }
+
+        .idarea, .pwarea {
+            height: 50%;
+        }
+
+        .input {
+            width: 100%;
+            height: 100%
+        }
+
+        .idbtnarea {
+            width: 30%;
+            text-align: center;
+        }
+
+
+        .loginbtn {
+            margin-top: 10px;
+        }
+
+
+        #mailbox {
+            height: 50%;
+            margin-bottom: 5px;
+        }
+
+        .mail_title {
+            height: 15%;
+            text-align: center;
+        }
+
+        .mail_area {
+            height: 85%;
+            overflow-y: auto;
+        }
+
+        .mail_text {
+            text-align: center;
+            height: 35px;
+            border-left: 1px solid black;
+            border-bottom: 2px dashed black;
+        }
+
+        #adbox {
+            height: 30%;
+            background-color: pink;
+            border-radius: 5%;
+        }
+
+        .container .footer {
+            height: 10%;
+        }
+
+        .footer_endtext {
+            text-align: center;
+            line-height: 65px;
             height: 100%;
         }
 
-        #logo{width: 20%;}
-        #title{width: 60%;}
-
-        #title_img{
-            padding-top: 10px;
-        }
-
-        #reserve{width: 20%;}
-        #content{width: 70%;}
-        #side{width: 30%; padding: 15px;}
-
-
-        
-    #loginbox{
-        height: 20%;
-        margin-bottom: 7px;
-    }
-
-    .hello{
-        text-align: center;
-        height: 40%;
-    }
-
-    .logarea{
-        height: 60%;
-    }
-
-    .inputarea{
-        width: 70%;
-    }
-
-    .idarea, .pwarea{
-        height: 50%;
-    }
-
-    .input{
-        width: 100%;
-        height: 100%
-    }
-
-    .idbtnarea{
-        width: 30%;
-        text-align: center;
-    }
-
-
-    .loginbtn{
-        margin-top: 10px;
-    }
-
-
-    #mailbox{
-        height: 50%;
-        margin-bottom: 5px;
-    }
-
-    .mail_title{
-        height: 15%;
-        text-align: center;
-    }
-
-    .mail_area{
-        height: 85%;
-        overflow-y: auto;
-    }
-
-    .mail_text{
-        text-align: center;
-        height: 35px;
-        border-left: 1px solid black;
-        border-bottom: 2px dashed black;
-    }
-
-    #adbox{
-        height: 30%;
-        background-color: pink;
-        border-radius: 5%;
-    }
-
-
-    .footer_endtext{
-        text-align: center;
-        line-height: 90px;
-    }
-
-       
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -165,7 +188,7 @@
                     </div>
                     <div class="logarea">
                         <div class="col inputarea">
-                            <div class="idarea"> 
+                            <div class="idarea">
                                 <input type="text" class="input" placeholder="ID">
                             </div>
                             <div class="pwarea">
@@ -199,6 +222,7 @@
             <div class="footer_endtext">@Since 2024 03 19</div>
         </div>
     </div>
-    
+
 </body>
+
 </html>
