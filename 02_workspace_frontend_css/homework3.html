@@ -78,6 +78,29 @@
             width: 70%;
         }
 
+        .contentrow{
+            height: 50%;
+        }
+
+        .contentcol{
+            width: 50%;
+            height: 100%;
+            text-align: center;
+            padding-top: 33px;
+        }
+
+        .contentcol>img{
+            border-radius: 5%;
+        }
+
+        .contentcol:hover{
+            cursor:-webkit-zoom-in;
+            background-color: snow;
+            opacity: 0.5;
+            border: 0.5px solid black;
+            border-radius: 5%;
+        }
+
         #side {
             width: 30%;
             padding: 20px;
@@ -111,15 +134,16 @@
         }
 
         .idbtnarea {
+            position: relative;
             width: 30%;
             text-align: center;
+            
         }
-
 
         .loginbtn {
-            margin-top: 10px;
+            position: absolute;
+            top:15px;
         }
-
 
         #mailbox {
             height: 50%;
@@ -139,14 +163,22 @@
         .mail_text {
             text-align: center;
             height: 35px;
+            line-height: 35px;
             border-left: 1px solid black;
             border-bottom: 2px dashed black;
+        }
+
+        .mail_text:hover{
+            cursor: pointer;
+            background-color: lightgray;
         }
 
         #adbox {
             height: 30%;
             background-color: pink;
             border-radius: 5%;
+            text-align: center;
+            line-height: 120px;
         }
 
         .container .footer {
@@ -157,6 +189,7 @@
             text-align: center;
             line-height: 65px;
             height: 100%;
+            font-weight: bold;
         }
 
     </style>
@@ -180,7 +213,24 @@
             </ul>
         </div>
         <div class="body">
-            <div class="col" id="content"></div>
+            <div class="col" id="content">
+                <div class="row contentrow">
+                    <div class="col contentcol">
+                        <img src="white.jpg">
+                    </div>
+                    <div class="col contentcol">
+                        <img src="pink.jpg">
+                    </div>
+                </div>
+                <div class="row contentrow">
+                    <div class="col contentcol">
+                        <img src="yello.jpg">
+                    </div>
+                    <div class="col contentcol">
+                        <img src="brown.jpg">
+                    </div>
+                </div>
+            </div>
             <div class="col" id="side">
                 <div class="row" id="loginbox">
                     <div class="hello">
@@ -214,12 +264,12 @@
                     </div>
                 </div>
                 <div id="adbox">
-
-                </div>
+                    <i class="fa-solid fa-rectangle-ad fa-2xl"></i>
+                    </div>
             </div>
         </div>
         <div class="footer">
-            <div class="footer_endtext">@Since 2024 03 19</div>
+            <div class="footer_endtext">@Copyright by saemi Since 2024.03.19</div>
         </div>
     </div>
 
