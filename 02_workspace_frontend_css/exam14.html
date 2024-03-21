@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+
+        .con{
+            width: 400px;
+            height: 3000px;
+            margin: auto;
+            border: 2px solid black;
+        }
+
+        .navi{
+            width: 25px;
+            height: 300px;
+            position: fixed;
+            top: 30%;
+            background-color: lightgray;
+            border: 2px solid black;
+            overflow: hidden;
+           /*자신의 영역을 벗어나는 chid에 대해 어떻게 대처할 것인가.
+            즉, 벗어나는 영역인 아이 유엘만 숨긴다.
+            li에 border를 줬는데 개는 안 숨겨지고
+            그냥 보였음*/
+        }
+
+        .navi:hover{
+            width: 120px;
+            transition-duration: 1s;
+            /*누르는 순간 navi width를 천천히 늘린다*/
+        }
+
+        .eyemenu_ul{
+            width: 115px;
+            height: 100%;
+            line-height: 60px;
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
+            /*list-style: none;
+            이거하면 왼쪽으로 치우치고,
+            padding 0px 하면 점도 사라지고,
+            가운데로 글씨가 잘간다.
+            why?*/
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="con"></div>
+    <div class="navi">
+        <ul class="eyemenu_ul">
+            <li class="line">Home</li>
+            <li class="line">About</li>
+            <li class="line">Portfolio</li>
+            <li class="line">Contact</li>
+            <li></li>
+        </ul>
+        
+    </div>
+</body>
+</html>

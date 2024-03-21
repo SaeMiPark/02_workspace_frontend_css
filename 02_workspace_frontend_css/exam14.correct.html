@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        /* div{border: 1px solid black;} */
+        .container{
+            border: 1px solid black;
+            width: 500px;
+            height: 3000px;
+            margin: auto;
+            position: relative;
+        }
+        .container .side{
+            width: 120px;
+            height: 300px;
+            position: fixed;
+            top:130px; 
+            left:-96px;
+            background-color: lightgrey;
+            color: white;
+            font-weight: bold;
+            transition-duration: 2s;
+        }
+        .container .side:hover{
+            transform: translate(100px);
+
+        }
+
+        .container .side>div{
+            float: left;
+            height: 100%;
+        }
+
+        .container .side .menu{width: 80%;}
+        .container .side .menu>div{
+            line-height: 50px;
+            margin-left: 5px;
+        }
+        .container .side .menu>div:hover{
+            cursor: pointer;
+            background-color: grey;
+        }
+
+        .container .side .click{           
+            width: 20%;
+            text-align: center;
+            line-height: 280px;
+        }
+        /* .container .side .click:hover{color: lightgray;} 
+           => 이렇게 하게 되면 "▷" 얘만 색 변함  */
+
+        .container:hover .click{
+            color: lightgray;
+        }
+        /* 컨테이너에 마우스를 올렸을 때 클릭에 반응함 */
+        
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="side">
+            <div class="menu">
+                <div>Home</div>
+                <div>AboutMe</div>
+                <div>Portfolio</div>
+                <div>Contact</div>
+            </div>
+            <div class="click">▷</div>
+        </div>
+    </div>
+
+</body>
+</html>

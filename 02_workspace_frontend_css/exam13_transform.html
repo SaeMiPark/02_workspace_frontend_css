@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{border: 1px solid black;}
+
+        .box{
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            transition-duration: 1s;
+        }
+
+        #box1{
+              background-color: black;
+              color: white;
+        }
+
+        #box1:hover{
+            background-color: white;
+            color: black;
+            transform: rotate(20deg);    
+        }
+
+        #box2:hover{
+            transform: translate(100px, 0px);
+        }
+
+        #box3:hover{
+            transform: scale(2);
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box1">Rotate</div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+</body>
+</html>
