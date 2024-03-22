@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{box-sizing: border-box;}
+        
+        div{border:1px solid black;}
+
+        .con{
+            position: relative;
+            height: 300px;
+            width: 300px;   
+        }
+        .con>.img1{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+           
+        }  
+
+        .con>.color{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            transition-duration: 2s;
+          
+        }
+
+        .con:hover> .color{
+            background-color: black;
+            opacity: 0.5;
+        }
+
+        .con>.text{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            line-height: 300px;
+            transition-duration: 2s;
+            text-align: center;
+            z-index:-1;
+          
+        }
+        .con:hover>.text{
+            color:white;
+            z-index:1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <img src="gray.jpg" alt="" class="img1">
+        <div class="color"></div>
+        <div class="text">Please</div>
+    </div>
+</body>
+</html>

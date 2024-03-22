@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*transition-duration(요소)
+          transform(hover)*/
+
+        .box1 {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            background-color: #0000ff;
+            transition-duration: 2s;
+            
+        }
+
+        .box1:hover {
+            transform: rotate(10deg);
+            background-color: #ffcccc;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            
+        }
+
+        .box2:hover {
+            width: 300px;
+            height: 300px;
+
+            transition-duration: 5s;
+            /*전환 효과의 동작시간을 설정 */
+            transition-property: width;
+            /* 전환 효과를 부여할 css속성 설정 */
+            transition-delay: 2s;
+            /*전환 효과 동작 대기시간 설정 */
+            transition-timing-function: linear;
+            /*전환 효과 동작시 속도 설정 */
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: violet;
+        }
+
+        .box3:hover {
+            width: 300px;
+            height: 300px;
+
+            transition: 5s 2s width linear;
+            /*box1과 동일하게 동작하고 transiton-duration,property,delay,timing-function을 한번에 설정한 예시 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <img src="pink.jpg" width="100px" height="100px">
+</body>
+
+</html>

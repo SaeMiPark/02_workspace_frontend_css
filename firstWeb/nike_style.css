@@ -1,0 +1,303 @@
+*{box-sizing: border-box;}
+/*div{border: 1px solid black;}*/
+
+.col{
+    float: left;
+    height: 100%;
+}
+
+.binarea{
+    width: 100%;
+    height: 200px;
+}
+
+.bg_video_area{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.bg_video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.first{
+    width: 100%;
+    height: 700px;
+}
+
+.navi_area{
+    height: 100%;
+}
+
+.navi_bincol{
+    width: 15%;
+}
+
+.navi_logo_col{
+    width: 70%;
+    text-align: center;
+}
+
+.logo_row{
+    padding-top: 6px;
+    height: 20%;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+}
+
+.logo_row>img{
+    height: 90%;
+    width: 40%;
+}
+
+.logo_bin_row{
+    height: 40%;
+}
+
+
+.navi_menu_col{
+    position: relative;
+    width: 15%;
+}
+
+.menu{
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    top:-220px;
+    transition-duration: 2s;
+}
+
+.menu:hover{
+    cursor: pointer;
+    transform: translateY(220px);
+}
+
+.menu_in_row{
+    height: 20%;
+    color: white;
+    text-decoration-line: underline;
+    text-align:right;
+    line-height: 40px;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+.menu_in_row:hover{
+    background-color: lightgray;
+    opacity: 0.5;
+    font-weight:bolder;
+}
+
+a{
+    color: white;
+}
+
+.menu_in_row:hover>a{
+    color: black;
+}
+
+.menu_bar_row{
+    height: 20%;
+    text-align: right;
+    line-height: 50px;
+    padding-right: 10px;
+}
+
+.main_bin_area{
+    height: 60%;
+}
+
+
+/*--------------Wear DIV------------------*/
+
+.second{
+    position:relative;
+    width: 100%;
+    height: 2000px;
+}
+
+.div0{
+    position:absolute;
+    width: 400px;
+    height: 600px;
+    top:10%;
+    right: 10%;
+    border-right:7px solid darkred;
+    border-bottom: 7px solid darkred;
+    text-align: center;
+}
+
+.div0>img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.div1{
+    position:absolute;
+    width: 800px;
+    height: 500px;
+    top: 25%;
+    left:15%;
+    border-left:7px solid darkblue;
+    border-bottom: 7px solid darkblue;
+}
+
+.div1>img{
+    width: 100%;
+    height: 100%;
+}
+
+.div2{
+    position:absolute;
+    width: 400px;
+    height: 600px;
+    bottom: 11%;
+    left: 7%;
+    border-top:7px solid purple;
+    border-left: 7px solid purple;
+}
+
+.div2>img{
+    width: 100%;
+    height: 100%;
+}
+
+.div3{
+    position:absolute;
+    width: 900px;
+    height: 501px;
+    bottom: 5%;
+    right: 10%;
+    border-right: 7px solid green;
+    border-left: 7px solid green;
+}
+
+.div3>video{
+    position:relative;
+    right:7px;
+    width: 900px;
+    height: 500px;
+}
+
+
+/******sneakers DIV********/
+
+.third{
+    width: 100%;
+    height: 800px;
+}
+
+.sneakers_col1{
+    width: 20%;
+    height: 800px;
+}
+
+.sneakers_col2{
+    width: 60%;
+    height: 800px;
+}
+
+.sneakers_col3{
+    width: 20%;
+    height: 800px;
+}
+
+.sneakers_row1{
+    height: 400px;
+}
+
+.sneakers_row_title{
+    width: 100%;
+    height: 60px;
+    line-height: 50px;
+    padding-left: 7%;
+}
+
+.sneakers_row_itemlist{
+    width: 100%;
+    height: 300px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.sneakers_row_itemlist>.itembox{
+    display: inline-block;
+    /*가로 스크롤이 
+    display: inline-block을 했더니 나왔다
+    itembox=list의 container 속성이
+    block이기 때문일까?...
+
+    처음에 나는 img, color, text에
+    inline-block속성을 줬었다.
+    하지만 그래도 안 나왔다.
+
+    추측: 부모에게 display inline-block을 한다면
+    자식도 다 적용되는가?
+    + 부모까지도 해야 가로 속성이 되는 이유는?
+    */
+    position: relative;
+    width: 220px;
+    height: 280px;
+    margin-left: 60px;
+}
+
+.itembox>img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.itembox>.color{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition-duration: 2s;
+}
+
+.itembox:hover>.color{
+    background-color: black;
+    opacity: 0.1;
+}
+
+.itembox>.text{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding-top:30%;
+    font-weight: bold;
+    transition-duration: 1.5s;
+    color: white;
+    z-index: -1;
+}
+
+.itembox:hover>.text{
+    z-index: 1;
+}
+
+.sneakers_row_bin_bottom{
+    height: 40px;
+}
+
+.sneakers_row2{
+    height: 400px;
+}
+
+
+
+
+
+
+
+
+
+
+
