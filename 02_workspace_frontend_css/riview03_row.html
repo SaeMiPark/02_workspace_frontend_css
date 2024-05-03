@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        div {
+            border: 1px solid black;
+        }
+
+        .container{
+            width: 600px;
+            height: 500px;    
+        }
+
+        .header{
+            /*width100%없어도 된다
+            있을 떄나 없을 때나 문제 없다.*/
+            width: 100%;
+            height: 15%;
+        }
+
+        .body{
+            width: 100%;
+            height: 75%;
+        }
+
+        .footer{
+            width: 100%;
+            height: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- div안의 div값이 변하면 container도 알아서 변한다 -->
+    <div class="container">
+        <!-- 자식의 넓이 100%기준은 부모다 -->
+        <div class="header"></div>
+        <div class="body"></div>
+        <div class="footer"></div>
+    </div>
+
+</body>
+
+</html>

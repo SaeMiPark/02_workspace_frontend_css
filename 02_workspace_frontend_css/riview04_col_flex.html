@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        div {
+            border: 1px solid black;
+        }
+
+        .container{
+            width: 600px;
+            height: 500px; 
+            /*부모요소가 display:flex여야
+            height는 100%갖는다.
+            main축: row다 X축
+            cross축: col이 된다. y축
+            cross축이 100%를 갖는다.
+            */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box1{
+            /*넓이의 의미 넓이 100% 비율..*/
+            flex:1;
+        }
+
+        .box2{
+            /*넓이 1:1비율 즉 50%대 50%*/
+            flex:1; 
+        }
+
+        .box3{
+            flex:1; 
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- div안의 div값이 변하면 container도 알아서 변한다 -->
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+
+</body>
+
+</html>
