@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="txt" type="text" value="JS practice">
+    <table aria-rowindex="3" aria-colindex="3">
+        
+    </table>
+    <script>
+        //지역변수 선언 let 함수스콥, 지역스콥
+        let input =document.getElementById("txt"); //인스턴스의 주소를 가져오는 개념
+        //document의 뜻 실행되는 시점의 문서상에서
+        //자료형이 없는 것 명시적 자료형이 없는것 다르다
+        //자료형은 존재하나 명시하지 않는다.
+        //주소값을 가지거나, null값을 가지거나 null값을 가질 때는 주소값을 갖는게 아니다.
+        console.log(input.value);
+        input.value="값 바꾸기";
+
+        //제어문  if, for, while, 자바랑 문법 똑같다.
+    </script>
+    
+</body>
+</html>
