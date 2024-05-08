@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /*div {border: 1px solid black;}*/
+
+        .container{
+            padding:0px;
+        }
+
+        .row, div[class*=col] {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row header">
+            <div class="col-12 col-md-3 d-flex justify-content-center d-none d-md-flex"><img src="title.png" class="w-75"></div>
+            <div class="col-12 col-md-7 d-flex align-items-center"><img src="title.png" class="w-75" alt=""></div>
+            <div class="col-12 col-md-2 d-none d-md-block">Rsv</div>
+        </div>
+        <div class="row navi">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-md bg-body-tertiary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Features</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Pricing</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row body">
+            <div class="col-12 col-md-8 order-2 order-md-1"> 
+                <div class="row g-0">
+                    <div class="col-12 p-1">
+                        <div id="carouselExample" class="carousel slide">
+                            <div class="carousel-inner ">
+                                <div class="carousel-item active ">
+                                    <img src="white.jpg" class="d-block w-100 g-0" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="pink.jpg" class="d-block w-100 g-0" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="yello.jpg" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4"><img src="pink.jpg" class="w-100 p-1"></div>
+                    <div class="col-12 col-md-4"><img src="white.jpg" class="w-100 p-1"></div>
+                    <div class="col-12 col-md-4"><img src="yello.jpg" class="w-100 p-1"></div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 order-1 order-md-2">
+                <div class="row pt-2">
+                    <div class="col-12 text-center">
+                        LoginBox
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <div class="row">
+                            <div class="col-12">
+                                <input type="text" class="w-100" placeholder="id를 입력하세요.">
+                            </div>
+                            <div class="col-12">
+                                <input type="password" class="w-100" placeholder="pw를 입력하세요.">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <button class="btn btn-outline-primary w-100 h-100">login</button>
+                    </div>
+                    <div class="col-12 text-center">
+                        <a href="">회원가입</a> / <a href="">아이디찾기</a>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="row footer">
+            <div class="col-12 d-flex justify-content-center">
+                Why do we use it?
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
