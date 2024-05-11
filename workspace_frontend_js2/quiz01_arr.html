@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset id="fs">
+        <legend>Fruits</legend>
+        <!-- 목적을 생각해봤을 때 input보다는 div가 적절할 듯-->
+        <div id="arrtxt"></div> 
+    </fieldset>
+    <br>
+    <input id="txt1" type="text" placeholder="앞에 추가할 값">
+    <button id="txt1_btn1">앞쪽에 추가</button>
+    <button id="txt1_btn2">앞에서 삭제</button>
+    <br>
+    <input id="txt2" type="text" placeholder="뒤에 추가할 값">
+    <button id="txt2_btn1">뒤쪽에 추가</button>
+    <button id="txt2_btn2">뒤에서 삭제</button>
+
+
+    <script>
+        let arrtxt=document.getElementById("arrtxt")
+        let txt1=document.getElementById("txt1");
+        let txt2=document.getElementById("txt2");
+        let txt1_btn1=document.getElementById("txt1_btn1");
+        let txt1_btn2=document.getElementById("txt1_btn2");
+        let txt2_btn1=document.getElementById("txt2_btn1");
+        let txt2_btn2=document.getElementById("txt2_btn2");
+        
+        let arr=[]; 
+        
+        //null, undefined, "", 0
+
+        //최신 문법
+        //앞쪽에 추가
+        txt1_btn1.addEventListener("click", function(){
+            //null로 하면 알림창이 뜨지 않는다.
+            //미묘한 차이가 있다? "", null
+            //input text에 아무런 값이 없을 때 null이 아니라 ""을 의미한다.
+            if(txt1.value==""){ 
+                alert("단어를 입력해주세요.");
+                return;
+            }
+            arr.unshift(txt1.value);
+            arrtxt.innerHTML=arr.join(", ");
+            txt1.value="";
+        });
+
+        //앞에서 삭제
+        txt1_btn2.addEventListener("click", function(){
+            if(txt1.value==""){ 
+                alert("단어를 입력해주세요.");
+                return;
+            }
+            arr.shift();
+            arrtxt.innerHTML=arr.join(", ");
+            txt1.value="";
+        });
+
+        //뒤쪽에 추가
+        txt2_btn1.addEventListener("click",function(){
+            if(txt2.value==""){ 
+                alert("단어를 입력해주세요.");
+                return;
+            }
+            arr.push(txt2.value);
+            arrtxt.innerHTML=arr.join(", ");
+            txt2.value="";
+        });
+        
+        //뒤에서 삭제
+        txt2_btn2.addEventListener("click",function(){
+            if(txt2.value==""){ 
+                alert("단어를 입력해주세요.");
+                return;
+            }
+            arr.pop();
+            arrtxt.innerHTML=arr.join(", ");
+            txt2.value="";
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- //전 문법
+        //앞쪽에 추가
+         txt1_btn1.onclick=function(){
+             arr.unshift(txt1.value);
+             arrtxt.innerHTML=arr.join(", ");
+         }
+        
+        //앞쪽에 삭제
+        txt1_btn2.onclick=function(){
+            arr.shift();
+            arrtxt.innerHTML=arr.join(", ");
+
+        //뒤쪽에 추가
+        txt2_btn1.onclick=function(){
+            arr.push(txt2.value);
+            arrtxt.innerHTML=arr.join(", ");
+        }
+
+        //뒤에서 삭제
+        txt2_btn2.onclick=function(){
+            arr.pop();
+            arrtxt.innerHTML=arr.join(", ");
+        }
+} -->

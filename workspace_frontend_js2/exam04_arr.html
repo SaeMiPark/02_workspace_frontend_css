@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--button{btn$}*3 -->
+    <button>btn1</button>
+    <button>btn2</button>
+    <button>btn3</button>
+
+    <script>
+        //btns는 버튼 배열이다, 배열에는 onclick할 수 없다.
+        let btns = document.getElementsByTagName("button");
+        //한꺼번에 통제할 일이 있을 때만 사용
+        // for (let i = 0; i < btns.length; i++) {
+        //     btns[i].addEventListener("click",
+        //         function () {
+        //             alert("test");
+        //         }
+        //     );
+        // }
+
+        //자바 for each문 for(let btn of btns)
+        for (let btn of btns) {
+            btn.addEventListener("click",
+                function () {
+                    alert(btn.innerHTML);
+                }
+            );
+        }
+
+    </script>
+</body>
+
+</html>

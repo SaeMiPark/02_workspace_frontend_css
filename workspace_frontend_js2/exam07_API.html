@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</head>
+
+<body>
+    <!-- readonly 보기만 할 수 있음, disable 클리도 안됨 -->
+    <input id="post" type="text" placeholder="우편번호" readonly><button id="postcode">우편번호찾기</button>
+    <input id="address1" type="text" placeholder="기본주소" readonly><br>
+    <input id="address2" type="text" placeholder="상세주소">
+    <script>
+        //Framwork>Library>API(Application Programming Interface)
+        //Framwork: 틀에 잡힌 업무 방식 ex.spring
+        //Library: 기능을 담당하는 도구
+        //WEB API: 라이브러리의 서브 집합, 외부에 노출돼서 사용할 수 있도록 한 것
+        //공통점: 필요할 때 이미 만들어진 것들을 가져와서 쓴다는 점
+
+        //Web API: 대기업 또는 대규모 그룹에서 개인이 개발하기 어려운 서비스를 구축하여
+        //대중에 서비스 하는 것
+        //key: 누군지 밝혀 
+        //사용량을 제한한다?
+        //daum postcode API 주소 API
+        let postCodeBtn = document.getElementById("postcode");
+        let post = document.getElementById("post");
+        let address1 = document.getElementById("address1");
+        let address2 = document.getElementById("address2");
+        
+        postCodeBtn.onclick = function () {
+            new daum.Postcode({
+                oncomplete: function (data) {
+                    let zonecode= data.zonecode;
+                    let address=data.jibunAddress;
+                    post.value=zonecode;
+                    address1.value=address;
+                }
+            }).open();
+        }
+
+
+    </script>
+
+</body>
+
+</html>

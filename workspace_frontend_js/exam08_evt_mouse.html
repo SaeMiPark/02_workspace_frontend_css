@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="box">너무 멀리가진 말고..</div>
+
+    <script>
+        let box=document.getElementById("box");
+
+        box.onmouseover=function(){
+            box.innerHTML="바뀌자";
+        }
+
+        box.onmouseout=function(){
+            box.innerHTML="오늘 기분 아웃이야";
+        }
+    </script>
+</body>
+</html>

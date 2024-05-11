@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        div {
+            border: 1px solid black;
+        }
+
+        .con {
+            margin: auto;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .row1{ 
+            flex: 8;
+        }
+        
+        .row2 {
+            flex: 2;
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con col">
+        <div id="box" class="row row1">I'm Box!</div>
+        <div id="btnbox" class="row row2">
+            <button id="redbtn">RED</button>
+            <button id="greenbtn">GREEN</button>
+            <button id="bluebtn">BLUE</button>
+        </div>
+    </div>
+
+    <script>
+        let box = document.getElementById("box");
+        let redbtn = document.getElementById("redbtn");
+        let greenbtn = document.getElementById("greenbtn");
+        let bluebtn = document.getElementById("bluebtn");
+        //inline으로 적용한 스타일은 사라져버린다.
+        redbtn.onclick=function(){
+            box.setAttribute("style","background-color: red;");
+        }
+
+        greenbtn.onclick=function(){
+            box.setAttribute("style","background-color: green;");
+        }
+
+        bluebtn.onclick=function(){
+            box.setAttribute("style","background-color: blue;");
+        }
+
+    </script>
+</body>
+
+</html>

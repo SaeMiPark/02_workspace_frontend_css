@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let person = {
+            name: "Jack",
+            contact: "01099998888",
+            hello: function () {
+                alert("Hello Everyone. I'm " + this.name);
+            },
+            hobby: ["java", "book", "guiter"],
+            score: {
+                kor: 100,
+                eng: 90,
+                math: 80
+            },
+            favoriteFruits: function () {
+                return ["Apple", "Orange", "Mango"];
+            },
+            abillities: function () {
+                return {
+                    java: function () {return 100;},
+                    css: function () {return 90;},
+                    js: function () {return 80;}
+                }
+            },
+            helloTo: function(friend){
+                alert("Hello"+friend.name);
+            },
+            Dron:function(brand, price){
+                this.brand=brand;
+                this.price=price;
+            }
+
+        }
+
+        //1. jack의 영어 점수
+        console.log(person.score.eng);
+
+        //2. 3번째로 좋아하는 과일
+        console.log(person.favoriteFruits()[2]);
+
+        //3. css점수 출력
+        console.log(person.abillities().css());
+
+        
+        person.helloTo({name: "Tom"}) //객체를 넘긴다==인스턴스의 주소를 넘긴다
+        //person인스턴스 안에 dron생성자가 있구나
+        let dron=new person.Dron("Samsung",100000); 
+        console.log(dron.brand, dron.price);
+    </script>
+</body>
+
+</html>

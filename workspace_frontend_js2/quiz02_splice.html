@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset id="fs">
+        <legend>목록</legend>
+        <!-- 목적을 생각해봤을 때 input보다는 div가 적절할 듯-->
+        <div id="arrtxt"></div>
+    </fieldset>
+    <br>
+    <input id="txt1" type="text" placeholder="추가할 단어">
+    <button id="txt1_btn1">추가하기</button>
+    <br>
+    <input id="txt2" type="text" placeholder="삭제할 단어">
+    <button id="txt2_btn1">삭제하기</button>
+
+    <script>
+        let arrtxt = document.getElementById("arrtxt")
+        let txt1 = document.getElementById("txt1");
+        let txt2 = document.getElementById("txt2");
+        let txt1_btn1 = document.getElementById("txt1_btn1");
+        let txt2_btn1 = document.getElementById("txt2_btn1");
+
+        let arr = [];
+
+        //추가하기
+        txt1_btn1.addEventListener("click", function () {
+            if (txt1.value == "") {
+                alert("단어를 입력해주세요.");
+                return;
+            }
+            arr.push(txt1.value);
+            arrtxt.innerHTML = arr.join(", ");
+            txt1.value = "";
+        });
+
+        //삭제하기
+        txt2_btn1.addEventListener("click", function () {
+            if (txt2.value == "") {
+                alert("단어를 입력해주세요.");
+                return;
+            }
+            
+            if (arr.includes(txt2.value)) {
+                arr.splice(arr.indexOf(txt2.value), 1);
+            }else{
+                alert("삭제할 단어가 존재하지 않습니다.");
+                return;
+            }
+            arrtxt.innerHTML = arr.join(", ");
+            txt2.value = "";
+        });
+
+    </script>
+</body>
+
+</html>

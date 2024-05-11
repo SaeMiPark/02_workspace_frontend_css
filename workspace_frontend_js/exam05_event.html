@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="pop">Pop!</button>
+    <script>
+        //pop버튼의 인스턴스 주소를 담기
+        let btn=document.getElementById("pop");
+        //JS에서 Event란
+        //브라우저에서 취하는 행동 하나하나
+        //ex. 좌클릭, 마우스 움직임, 키보드 타이핑, 마우스 휠, 브라우저 크기 조정 등등..
+
+        //Event source: 이벤트 주체가 되는 엘레먼트
+        //이벤트 발생의 근원지
+        
+        //Event Listener: 이벤트 감시자 
+        //근원 엘레먼트가 감지할 수 있는 이벤트 종류
+        //ex. 버튼은 클릭을 감지하는 리스너가 있다.
+        //ex. 입력창은 키보드를 감지하는 리스너가 있다.
+        //이벤트 리스너는 변수다 함수의 주소를 받는다.
+        //btn.onclick = ;
+
+        //Event Handler:
+        //이벤트 발생 시 처리 동작을 가지는 함수
+        //익명 함수로 넣어준다
+        /*btn.onclick=function(){
+            alert("Pop!");
+        };*/
+       
+        function pop(){
+            alert("Pop!");
+        }
+
+        btn.onclick=pop;
+        //btn.onclick=pop()하면 이건 메소드 콜!!!, undefined를 가지게 된다.
+        //메소드 콜이 아니라 함수의 주소를 넣어야 한다.
+
+        //callback 함수
+        //개발자가 콜하는게 아니라 특정 이벤트에 따라 트리거 되서 자동으로 콜 되는 것
+        // 트리거나 이벤트에 탑재해서 트리거되는 것 ==콜백 함수
+        
+
+
+    </script>
+    
+</body>
+</html>

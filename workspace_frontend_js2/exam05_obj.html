@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //() : 함수
+        //[] : 배열
+        //{} : 객체
+
+        //JS 객체
+        //객체 생성 3가지 방법
+        //1. 객체 Literal{}: 사용 빈도 높음 설계도(class) 없이 인스턴스를 만든 것.
+        let obj = {
+            num: 1001,
+            str: "박새미",
+            1: "one", //숫자는 키값으로 사용할 수 있다.
+            print: function () { alert("Hello"); }
+        };
+        //출력 방법 1 쩜
+        console.log(obj.num);
+        console.log(obj.str);
+        // console.log(obj.1); 막상 숫자로 된 변수는 사용할 수는 없다.
+        //console.log(obj.print()); //반환 void = undefined
+
+        //출력 방법2 대괄호
+        //문자는 무조건 쿼테이션 붙여야 한다.
+        //숫자는 쿼테이션 있든 없든 사용 가능
+        console.log(obj["str"]);
+        console.log(obj[1]);
+        console.log(obj["1"]);
+
+        //2. 생성자 함수==함수
+        //다른 점 생성자 함수는 함수명의 첫 번째가 대문자이다:컨벤션
+        function Music(id, title, singer) { //클래스, 설계도 같은 역할
+            this.id = id;
+            this.title = title;
+            this.singer = singer;
+            this.hello = function () { };//멤버메소드
+        }
+
+        let obj2 = new Music(1001, "Face", "뉴이스트");
+        console.log(obj2.id);
+        console.log(obj2.singer);
+        console.log(obj2.title);
+
+        //3. 기본 객체 Object
+        let obj3 = new Object();
+        obj3.id = 1002;
+        obj3.title = "범죄도시4";
+        obj3.genre = "액션";
+        obj3.hello = function () {
+            return "Hello";
+        }
+
+        
+
+
+
+
+    </script>
+</body>
+
+</html>

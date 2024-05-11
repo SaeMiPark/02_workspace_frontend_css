@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="txt">
+    <div id="box"></div>
+    <script>
+        let txt = document.getElementById("txt");
+        let box = document.getElementById("box");
+
+        txt.onkeypress = function (e) {
+            if (e.key == "Enter") {
+                box.innerHTML = txt.value;
+            }
+        }
+
+        //Enter 대소문자 구분해야지 적용된다.
+        //다른 방법
+        // txt.onkeyup = function(e){
+        //     if(e.key=="Enter"){}
+        // }
+
+    </script>
+</body>
+
+</html>

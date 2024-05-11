@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function : 함수와 같다
+        function plus(num1, num2){
+            return num1+num2;
+        }
+
+        let result=plus(10,5);
+        console.log(result);
+
+        let abc=plus;
+        //abc==plus함수의 주소값을 담고 있다.
+        abc(20,30);
+        console.log(abc);
+
+        //익명 함수==함수 이름만 없는 함수
+        //익명 함수는 자신의 주소값을 리턴한다.
+        //리턴값이 아니라!!!!!!!!!!!!!!!!
+
+        let minus= function(num1, num2){
+            return num1-num2;
+        }
+
+        let result2=(function(num1, num2){
+            return num1*num2;
+        })(3,10);
+
+        //곱셈함수는 일회용 함수로
+        //다시 부를 방법이 없다
+        //IIFE(Instantly Invoked Function Expression)
+        //즉석에서 사용되는 함수 표현식
+
+        console.log(result2);
+
+    </script>
+</body>
+</html>

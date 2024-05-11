@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{
+            width: 200px;
+            height: 200px;
+        }
+
+        .col{
+            display: flex;
+            flex-direction: column;
+        }
+
+        #box{
+            color: blue;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con col">
+        <input type="text" id="txt1">
+        <input type="text" id="txt2">
+        <div id="box"></div>
+    </div>
+    <script>
+        let txt1=document.getElementById("txt1");
+        let txt2=document.getElementById("txt2");
+        let box=document.getElementById("box");
+
+        txt2.onkeypress=function(e){
+            if(e.key=="Enter"){
+                if(txt1.value==txt2.value){
+                    box.innerHTML="패스워드가 일치합니다.";
+                }else{
+                    box.style.color="red";
+                    //box.setAttribute("style","color:red");
+                    box.innerHTML="패스워드가 다릅니다.";
+                    
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

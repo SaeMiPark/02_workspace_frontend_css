@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+        }
+
+        .con {
+            height: 200px;
+            width: 200px;
+            margin: auto;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row1 {
+            flex: 7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .row2 {
+            flex: 3;
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<>
+    <div class="con col">
+        <div id="box" class="row1">I'm Box</div>
+        <div class="row2">
+            <!-- 사용자 정의 속성 컨벤션: 앞에 data-를 붙여준다.-->
+            <button data-color="red">red</button>
+            <button data-color="green">green</button>
+            <button data-color="blue">blue</button>
+        </div>
+    </div>
+
+    <script>
+        let box = document.getElementById("box");
+        let btns = document.getElementsByTagName("button");
+
+        for (let btn of btns) {
+            btn.addEventListener("click", function () {
+                // box.setAttribute("style", "background-color:" + btn.getAttribute("data-color"));
+                box.setAttribute("style", "background-color:" + btn.dataset.color);
+            });
+        }
+    </script>
+
+    </body>
+
+</html>

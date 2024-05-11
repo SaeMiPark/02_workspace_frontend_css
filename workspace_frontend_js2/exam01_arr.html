@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- JS배열 -->
+    <script>
+        //방법1
+        let arr1=new Array();
+
+        //방법2 주로 사용됨
+        let arr=[]; //배열 리터럴
+        //자바의 ArrayList와 비슷하다
+        //기본적으로 가변 배열이다. 
+
+        //let타입들 다 가능 
+        arr[0]="Hello";
+        arr[1]=10;
+        arr[2]=3.24;
+        arr[3]=function(){}; //함수의 주소
+        arr[4]=document.getElementById("쏼라"); //인스턴스의 주소
+        arr[5]=arr1[1,2,function(){return [4,5,6]}]; //이차원배열의 주소
+
+        //let result=arr[3]();
+        //arr[4].innerHTML="Test"; 
+        //arr[5][0] //1이 나온다.
+        //arr[5][2]()[0] //4이다.
+        console.log(arr[0]);
+        console.log(arr[1]);
+        console.log(arr);
+        console.log(arr.length); 
+
+    </script>
+    
+</body>
+</html>
