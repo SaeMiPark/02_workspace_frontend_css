@@ -15,20 +15,25 @@
 
         //JS 객체
         //객체 생성 3가지 방법
-        //1. 객체 Literal{}: 사용 빈도 높음 설계도(class) 없이 인스턴스를 만든 것.
+        //1. 객체 Literal{}: JSON
+        //사용 빈도 높음 설계도(class) 없이 인스턴스를 만든 것.
         let obj = {
             num: 1001,
             str: "박새미",
             1: "one", //숫자는 키값으로 사용할 수 있다.
             print: function () { alert("Hello"); }
         };
+
+        let test = new obj;  //에러 메세지 obj는 생성자가 아니다.
+        console.log("test");
+        console.log(test);
         //출력 방법 1 쩜
         console.log(obj.num);
         console.log(obj.str);
         // console.log(obj.1); 막상 숫자로 된 변수는 사용할 수는 없다.
         //console.log(obj.print()); //반환 void = undefined
 
-        //출력 방법2 대괄호
+        //출력 방법2 대괄호 무조건 쿼테이션
         //문자는 무조건 쿼테이션 붙여야 한다.
         //숫자는 쿼테이션 있든 없든 사용 가능
         console.log(obj["str"]);
@@ -57,11 +62,6 @@
         obj3.hello = function () {
             return "Hello";
         }
-
-        
-
-
-
 
     </script>
 </body>

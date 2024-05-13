@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <style>
+        .con {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            margin: auto;
+        }
+
+        .btnbox {
+            text-align: center;
+        }
+    </style>
+
+
+    <script>
+        $(function () { //문서가 로드되면 실행될 함수를 지정한다.
+            //     //div 2개 만듬 
+            let num=0;
+
+            $("#upbtn").on("click", function () {
+                let pp = $("<div>");
+                pp.html("Contents Message Here: "+ ++num);
+                $(".con").prepend(pp); //UI에 추가하기
+                
+            })
+
+            $("#downbtn").on("click", function () {
+                let ap = $("<div>");
+                ap.html("Contents Message Here: "+ ++num);
+                $(".con").append(ap);//UI에 추가하기
+            })
+
+        })   
+
+
+    </script>
+</head>
+
+<body>
+    <div class="con">
+    </div>
+    <div class="btnbox">
+        <button id="upbtn">위로 추가하기</button>
+        <button id="downbtn">아래로 추가하기</button>
+    </div>
+
+</body>
+
+</html>

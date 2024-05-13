@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*구조 선택자*/
+        /* div이면서 1번째(and조건!)  */
+        div:first-child{
+            background-color: antiquewhite;
+        }
+
+        div:nth-child(2){
+            background-color: pink;
+        }
+
+        div:nth-of-type(3){
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <!-- div{Test$}*4선택자 -->
+    <div>Test1</div>
+    <div>Test2</div>
+    <p>P</p>
+    <div>Test3</div>
+    <div>Test4</div>
+</body>
+</html>

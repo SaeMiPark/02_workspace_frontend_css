@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <input type="text">
+    <br>
+    <input type="text">
+    <div id="txt"></div>
+
+    <script>
+        $("input:nth-of-type(2)").on("keypress",function(e){
+            if(e.key=="Enter"){
+                if($("input:nth-of-type(1)").val()==$("input:nth-of-type(2)").val()){
+                    $("#txt").html("패스워드가 일치합니다.");
+                }else{
+                    $("#txt").html("패스워드가 일치하지 않습니다.");
+                }
+            }
+        });
+    </script>
+</body>
+</html>

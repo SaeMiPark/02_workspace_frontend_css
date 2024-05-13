@@ -50,9 +50,12 @@
         //3. css점수 출력
         console.log(person.abillities().css());
 
-        
-        person.helloTo({name: "Tom"}) //객체를 넘긴다==인스턴스의 주소를 넘긴다
-        //person인스턴스 안에 dron생성자가 있구나
+        //★ ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+        //함수에 객체 넘기기
+        //객체를 넘긴다==인스턴스의 주소를 넘긴다 .
+        person.helloTo({name: "Tom"}) 
+        //person 객체 안에 dron생성자가 있구나
+        //person은 하나의 인스턴스.
         let dron=new person.Dron("Samsung",100000); 
         console.log(dron.brand, dron.price);
     </script>

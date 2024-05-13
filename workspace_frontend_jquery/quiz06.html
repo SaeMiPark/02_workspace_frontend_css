@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        div {
+            border: 1px solid black;
+        }
+
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+        }
+
+        .con {
+            width: 300px;
+            height: 400px;
+            margin: auto;
+        }
+
+
+        .col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row {
+            display: flex;
+
+        }
+
+        .txtbox {
+            flex: 3;
+        }
+
+        .showbox {
+            flex: 7;
+            overflow: auto;
+        }
+
+        #titlebox,
+        #contentsbox,
+        #writerbox,
+        #btnbox {
+            flex: 1;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+
+        $(function () {
+            //동적으로 생성되는 소스들은 이벤트를 할당받지 못 한다.
+
+            $("#btn").on("click", function () {
+                let newrow = $("<tr>");
+            
+                //append도 가능
+                let titletxt = $("<td>").text($("#title").val());
+                let contentxt = $("<td>").text($("#contents").val());
+                let writertxt = $("<td>").text($("#writer").val());
+                
+                let delbutton =$("<button>").html("X");
+                let delTD= $("<td>").append(delbutton);
+
+                
+                newrow.append(titletxt);
+                newrow.append(contentxt);
+                newrow.append(writertxt);
+                newrow.append(delTD);
+
+                $("table").append(newrow); //UI에 적용
+
+            })
+
+        })
+
+    </script>
+</head>
+
+<body>
+    <div class="con col">
+        <div class="txtbox col">
+            <div id="titlebox">제목 : <input id="title" type="text"></div>
+            <div id="contentsbox">내용 : <input id="contents" type="text"></div>
+            <div id="writerbox">작성자:<input id="writer" type="text"></div>
+            <div id="btnbox"><button id="btn">테이블에 추가</button></div>
+        </div>
+        <div class="showbox col">
+            <table>
+                <tr>
+                    <th>제목</th>
+                    <th>내용</th>
+                    <th>작성자</th>
+                    <th>X</th>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>

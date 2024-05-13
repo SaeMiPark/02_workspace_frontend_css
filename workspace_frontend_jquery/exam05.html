@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style>
+        #con{
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        // 중요!!!!!!!!
+        $(function(){
+            //동적 엘레먼크 처리
+            //방법1
+            // $("#con").prepend("Prepend<br>");
+            // $("#con").append("<br>Append");
+            // $("#con").before("before<br>");
+            // $("#con").after("after");
+
+            // //전 내용 포함하고 그 전
+            // $("#con").prepend("Prepend2<br>");
+            // $("#con").append("<br>Append2");
+            // //전 내용 제외하고 그 전
+            // $("#con").before("before2");
+            // $("#con").after("after2<br>");
+
+            //조립식이 난이도를 높인다.
+            //짧은 데이터일 떄 방식
+            // let prepend1="<div>prepend1</div>"
+            // $("#con").prepend(prepend1)//div까지 적용한 prepend
+        
+            //긴 데이터 일 때 방식
+            //이렇게 하면 div에 대한 인스턴스를 만들어준다. 종료태그까지 알아서 만듬
+            //화면에는 없고 램에만 존재하는 상태
+            //변수에는 존재하지만, UI에 아직 등장하지 않은
+            //먼저 램속에 만들고 나중에 UI에 등록
+            //나중에 상황에따라 추가될수도 아닐 수도있는 동적 엘레먼트다.
+            
+            //방법2 컨벤션
+            let prepend1=$("<div>"); //J쿼리 이용해서 
+            prepend1.html("prepend1"); //J쿼리 div안에 내용 넣기
+            prepend1.css("background-color","pink");
+            
+
+            let append1=$("<div>")
+            append1.html("append1");
+            append1.css("background-color","blue");
+
+
+            $("#con").prepend(prepend1);
+            $("#con").append(append1);
+
+
+
+        })
+    </script>
+</head>
+<body>
+    <!-- 동적 엘리먼트 추가 -->
+    <div id="con">
+        [ 기존 내용 ]
+    </div>
+</body>
+</html>

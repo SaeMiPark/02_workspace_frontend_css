@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div>P1</div>
+    <div>P2</div>
+    <div>P3</div>
+    <div>P4</div>
+    <input type="text" id="num" placeholder="줄 번호를 입력하세요.">
+    <input type="text" id="color" placeholder="색을 입력하세요.">
+    <button id="btn">적용</button>
+
+    <script>
+        $("#btn").on("click", function () {
+            $("div:nth-of-type(" + $("#num").val() + ")").css("background-color", $("#color").val())
+        })
+
+        $(function () {
+            $("#btn").on("click", function () {
+                $("div:nth-of-type(" + $("#num").val() + ")").css("background-color", $("#color").val())
+            })
+        })
+    </script>
+</body>
+
+</html>

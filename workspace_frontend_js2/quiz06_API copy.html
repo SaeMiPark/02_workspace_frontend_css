@@ -12,11 +12,6 @@
 <body>
 
     <div id="map" style="width:500px;height:400px;"></div>
-    <br>
-    <div></div>
-    <button>
-        Clear
-    </button>
     <script>
         let container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
         let options = { //지도를 생성할 때 필요한 기본 옵션
@@ -24,29 +19,54 @@
             level: 4 //지도의 레벨(확대, 축소 정도)
         };
 
+        LMs=[];
+        num=1;
+
         let map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
-
-
         // 지도를 클릭했을때 클릭한 위치에 마커를 추가하도록 지도에 클릭이벤트를 등록합니다
-        //map에 대해 click이벤트가 발생할 때 핸들러 행동을 한다.
-        //이벤트 핸들러의 함수가 콜백함수이다.
         kakao.maps.event.addListener(map, 'click', function (e) {
             // 마커를 생성합니다
-            let latlng = e.latLng
             let marker = new kakao.maps.Marker({
-                position: latlng
+                position: e.latLng,
             });
 
+            marker.Ec.onclick=function(){
+                alert("클릭이다");
+            }
+            console.log(marker);
+            
+             
+            // console.log(marker.n.La);
 
+            // console.log(marker.n.Ma);
+
+           /*let LM=new Object();
+            LM.L=Math.floor(marker.n.La);
+            LM.M=Math.floor(marker.n.Ma);
+
+            LMs.push(LM);
+            console.log(LM.L);
+            console.log(LM.M);
+            */
             // 마커가 지도 위에 표시되도록 설정합니다
             marker.setMap(map);
-            
-            //마커가 이벤트 소스인 것 중요.
-            kakao.maps.event.addListener(marker, 'rightclick', function () {
-                marker.setMap(null);
-            });
-
+            // console.log(marker.Ec.attributeStyleMap.delete());
+            console.log(marker.areas.hidden="ture");
+           
         });
+
+        
+
+        kakao.maps.event.addListener(map, 'rightclick', function (e) {
+            console.log(Math.floor(e.latLng.La));
+            // console.log(e.latLng.Ma);
+            marker.Ec.onclick=function(){
+                alert("클릭이다");
+            }
+            
+        });
+
+
     </script>
 </body>
 
