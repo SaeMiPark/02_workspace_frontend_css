@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+
+    제목:<input type="text" id="title"><br>
+    내용:<input type="text" id="contents"><br>
+    작성자:<input type="text" id="writer"><br>
+    <button id="add">테이블에 추가</button>
+    <br>
+    <input type="text" id="deltitle" placeholder="삭제할 대상의 제목을 입력."><button id="del">삭제</button>
+    <table border="1">
+        <tr>
+            <th>제목</th>
+            <th>내용</th>
+            <th>작성자</th>
+        </tr>
+    </table>
+
+    <!-- <button class="del">TEST</button> -->
+
+    <script>
+        //동적으로 생성되는 소스들은 이벤트를 할당받지 못 한다.
+        //그러면 동적 소스들에 어떻게 이벤트를 할당하는가?
+        //방법 1. 이벤트 부여 방법의 변경 다이나믹 이벤트 바인딩
+        //1. 동적 요소를 포함하는 가장 가까운 정적 부모 요소 찾기
+        //1-이유. 너의 내부에서 변화가 생긴다면 감지해
+        //2. on함수에 두 번째 인자에 이벤트 소스에 대한 선택자 주기
+
+        //방법2. 
+
+        // $("table").on("click",".del", function () {
+        //     alert("Hello");
+        // });
+        $("#del").on("click", function () {
+            let deltxt = $("#deltitle").val();
+             //선택자로 지우기
+             //$(".title:contains('"+deltxt+"')")
+            if (deltxt != "") {
+                //다른 가능한 선택자들 $("tr>td:nth-child(1)")
+                $(".trs").each(function (index, tr) {
+                    //console.log($("#deltitle").val()); input내용
+                    //console.log($(tr).children()[1]); //<td>내용</td> td감싸여진 내용
+                    //console.log($(tr).children()[1].textContent); //내용 그냥 내용
+                    //console.log($($(tr).children()[1]).html()); //내용 그냥 내용
+                    //console.log($($(tr).children()[1]).text()); //내용 그냥 내용
+                    //.includes안에 string이 와야 하는데$("#deltitle").val() 얘는 제이쿼리객체여서 안돼
+                    //includes 리턴값 true false
+                    //indexOf로 한다면 !== -1를 반드시 해줘야한다. 그래야 true,false될 것 
+                    //indexOf는 리턴값 찾은 결과의 index
+                    if ($($(tr).children()[0]).text().includes(deltxt)) {
+                        $(tr).remove();
+                        $("#deltitle").val("");//setter역할도 함
+                        //return false;
+                        // console.log(tr);
+                        // return false; //처음 찾는 값만 삭제하기
+                    }
+                })
+            }
+        })
+
+
+        $("#add").on("click", function () {
+
+            if ($("#title").val() == "") {
+                alert("제목을 입력하세요.")
+                return;
+            }
+
+            if ($("#contents").val() == "") {
+                alert("내용을 입력하세요.")
+                return;
+            }
+
+            if ($("#writer").val() == "") {
+                alert("작성자를 입력하세요.")
+                return;
+            }
+
+
+            let title = $("#title").val();
+            let contents = $("#contents").val();
+            let writer = $("#writer").val();
+
+            //노드라고 한다.
+            let tr = $("<tr>");
+
+            let titleTD = $("<td>");
+            titleTD.append(title);
+
+            let contentsTD = $("<td>");
+            contentsTD.append(contents);
+
+            let writerTD = $("<td>");
+            writerTD.append(writer);
+
+            // let deleteTD = $("<td>");
+            // let delButton = $("<button>");
+            // delButton.addClass("del"); 
+            // //delButton.attr("class","del"); 
+            // delButton.html("X");
+            // deleteTD.append(delButton);
+            // //만들어지고 나서 바인딩하기
+            // delButton.on("click", function () {
+            //     // alert("Test");
+            //     //누구를 지워야 하는가? tr
+            //     //this.remove는 버튼이 지워짐.
+            //     //tr지우는 방법. element 검색을 해야 한다.
+            //     this.closest("tr").remove();
+
+            // })
+
+            tr.append(titleTD);
+            tr.append(contentsTD);
+            tr.append(writerTD);
+            // tr.append(deleteTD);
+            tr.addClass("trs");
+            $("table").append(tr);
+            // console.log($(".trs"));
+            //선택자는 화면에 렌더링 된 후에 적용시켜야 하며
+            //이런 코드는 좋지 않다. 첫번째 버튼에서 뒤에 버튼만큼 추가될 것.
+            // $(".del").on("click", function(){
+            //     alert("test");
+            // })
+
+            $("#title").val("");
+            $("#contents").val("");
+            $("#writer").val("");
+
+        })
+
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div>파일첨부
+        <button id="add">+</button>
+    </div>
+    <fieldset>
+        <legend>File List</legend>
+        <div class="filelist">
+        </div> 
+    </fieldset>
+
+
+    <script>
+        $("#add").on("click", function () {
+            // if($("input[type=file]").length > 4){ 
+            //     alert("ㅋㅋ");
+            //     return;
+            // }
+
+            if ($(".divs").length >= 5) {
+                alert("5개까지만 입력가능합니다.");
+                return;
+            }
+
+            //div 태그 만들기
+            let dv = $("<div>");
+
+            //input태그 만들기
+            let filetag = $("<input>").attr("type", "file");
+
+
+            //삭제 버튼 만들기
+            let delbtn = $("<button>");
+            delbtn.html("X");
+
+            let br = $("<br>");
+
+            //UI에 추가하기
+            dv.append(filetag);
+            dv.append(delbtn);
+            dv.append(br);
+            $("fieldset").append(dv);
+
+            //class속성 추가하기
+            dv.addClass("divs");
+
+            delbtn.on("click", function () {
+                $(this).parent().remove();
+            })
+        })
+
+    </script>
+</body>
+
+</html>
