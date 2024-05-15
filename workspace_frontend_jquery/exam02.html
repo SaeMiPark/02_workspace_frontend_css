@@ -15,28 +15,32 @@
     <button id="button">버튼</button>
 
     <script>
+        //인스턴스의 주소 담기
         $("#input");
-        let inputAsJS = document.getElementById("input")
+        let inputAsJS = document.getElementById("input");
+        //JS문법을 쓸 수 있다
         let inputASJqury = $("#input");
+        //J쿼리 문법을 쓸 수 있다.
 
-        console.log(inputAsJS);
-        console.log(inputASJqury);
+        console.log(inputAsJS); //출력: JS 엘레먼트 형태 <input type="text" id="input">
+        console.log(inputASJqury); //출력: JQurey object
 
         //input의 값 접근, val()
-        $("#input").val("졸려"); //getter
-        let value = $("#input").val(); //getter
-        console.log(value);
+        $("#input").val("졸려"); //setter
+        let value = $("#input").val(); //getter 
+        console.log(value); //출력: string값
 
         //div 값 접근, html()
-        let value2 = $("#div").html(); //getter
-        let value3 = $("#div").html("졸리다고"); //setter
-        console.log(value3);
+        $("#div").html("졸리다고"); //setter
+        let value3 = $("#div").html(); //getter
+        console.log(value3); //출력: string값
 
         //이벤트 주기 on 왼쪽이 요소, 오른쪽이 리스너핸들러
         $("#button").on("click",function () {
             // alert("TEST");
             // $("#div").css("background-color","pink");
             //$("#div").css("color","white");
+            //객체형태로 여러개 전달 가능
             $("#div").css({
                 "background-color": "pink",
                 "color": "white"

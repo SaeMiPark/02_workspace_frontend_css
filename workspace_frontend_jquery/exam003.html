@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* 자식 선택자 */
+        ul>li {
+            color: blue;
+        }
+
+        /* 자손 선택자 */
+        div p {
+            color: green;
+        }
+
+        /* 인접 형제 선택자 : 하나만*/
+        h2+p {
+            color: red;
+        }
+
+        /* 일반 형제 선택자 : 모든 형제 */
+        h2~p {
+            color: orange;
+        }
+
+        /* 가상 클래스 선택자 */
+        p:first-child {
+            font-weight: bold;
+        }
+
+        p:last-child {
+            font-style: italic;
+        }
+
+        p:nth-child(2) {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <p>첫 번째 단락</p>
+        <p>두 번째 단락</p>
+        <p>세 번째 단락</p>
+    </div>
+
+    <h2>제목</h2>
+    <p>첫 번째 형제 단락</p>
+    <p>두 번째 형제 단락</p>
+
+    <ul>
+        <li>첫 번째 아이템</li>
+        <li>두 번째 아이템</li>
+    </ul>
+
+</body>
+
+</html>

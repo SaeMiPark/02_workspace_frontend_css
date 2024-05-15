@@ -20,6 +20,7 @@
             height: 200px;
             border: 1px solid black;
             margin: auto;
+            display: flex;
         }
 
         .row {
@@ -36,7 +37,7 @@
             background-color: gray;
         }
 
-        .row1box>input {
+        .h-100 {
             height: 100%;
         }
 
@@ -61,10 +62,10 @@
 <body>
     <div class="con col">
         <div class="row row1box">
-            <input id="writer" type="text" placeholder="작성자명을 입력해주세요.">
+            <input class="h-100" id="writer" type="text" placeholder="작성자명을 입력해주세요.">
         </div>
         <div class="row row2box">
-            <div id="txts" class="textbox" contenteditable="true"></div>
+            <div id="contents" class="textbox" contenteditable="true"></div>
             <div class="replaybox">Reply</div>
         </div>
     </div>
@@ -72,15 +73,14 @@
 
     <script>
         $(".replaybox").on("click", function () {
+            //빈 문자열 처리
+            if ($("#writer").val() == "" || $("#txts").html() == "") {
+                alert("내용을 입력하세요");
+                return;
+            }
+
             //전체 박스
             let dcon = $("<div>").addClass("con");
-            dcon.css({
-                "width": "700px",
-                "height": "200px",
-                "border": "1px solid black",
-                "margin": "auto",
-                "display": "flex"
-            });
 
             //div col1
             let col1 = $("<div>");
@@ -90,32 +90,31 @@
             })
 
             //div-col-box
-            let col1_box = $("<div>");
-            col1_box.css({
-                "display": "flex",
-                "flex-direction": "column",
-                "height": "100%"
-            })
+            let col1_box = $("<div>").addClass("col h-100");
 
-            //제목 누구님의 글
-            let drow1 = $("<div>");
-            drow1.css({
+            //누구님의 글
+            let writer_div = $("<div>");
+            writer_div.css({
                 "flex": "1",
                 "background-color": "gray",
                 "display": "flex",
                 "align-items": "center"
             })
-            drow1.html($("#writer").val() + " 님의 글");
+
+
+            writer_div.html($("#writer").val() + " 님의 글");
             $("#writer").val("");
 
+
             //내용 
-            let drow2 = $("<div>").addClass("drow2");
-            drow2.css({
+            let contents_div = $("<div>").addClass("contents_div");
+            contents_div.css({
                 "flex": "3",
             })
-            drow2.html($("#txts").html());
-            $("#txts").html("");
-            drow2.attr("contenteditable", "false");
+
+            contents_div.html($("#contents").html());
+            $("#contents").html("");
+            contents_div.attr("contenteditable", "false"); //가져오고 닫기
 
             //div col2 버튼 2개 담을
             let col2 = $("<div>");
@@ -133,77 +132,53 @@
             //삭제버튼
             let delbtn = $("<button>");
             delbtn.html("삭제");
-            
-            let contents;
-            
+
+            let contents_txt;
+
             //수정 버튼 기능
             modifybtn.on("click", function () {
-                let frontbtn = $(this).text();
-                let backbtn = $(this).next().text();
+                let frontbtn = $(this).html(); //값을 담는 것임
+                let backbtn = $(this).next().html();
 
                 // 수정 버튼 클릭 시 현재 내용 저장
-                contents = $(this).closest(".con").find(".drow2").html();
+                contents_txt = $(this).closest(".con").find(".contents_div").html();
 
                 if (frontbtn == "완료") {
-                    $(this).closest(".con").find(".drow2").attr("contenteditable", "false");
+                    $(this).closest(".con").find(".contents_div").attr("contenteditable", "false");  //편집 닫기
+                    $(this).html("수정");
+                    $(this).next().html("삭제");
+                } else if (frontbtn == "수정") {
+                    $(this).closest(".con").find(".contents_div").attr("contenteditable", "true");  //편집 열기
+                    $(this).html("완료"); //수정을 누르면 완료로 변하게
+                    $(this).next().html("취소"); //수정을 누르면 취소로 변하게
                 }
-
-                //수정을 누르면 완료로 변하게
-                if (frontbtn == "수정") {
-                    // $(this).closest(".con").find(".drow2").attr("contenteditable","false");
-                    $(this).closest(".con").find(".drow2").attr("contenteditable", "true");
-                    $(this).text("완료");
-
-
-                } else {
-                    $(this).text("수정");
-                }
-
-                //삭제를 누르면 취소로 변하게
-                if (backbtn == "삭제") {
-                    $(this).next().text("취소");
-
-                } else {
-                    $(this).next().text("삭제");
-
-                }
-
             })
 
             //삭제 버튼 기능
             delbtn.on("click", function () {
-                let backbtn = $(this).text();
+                let frontbtn = $(this).prev().html();
+                let backbtn = $(this).html();
+
                 if (backbtn == "취소") {
-                    $(this).closest(".con").find(".drow2").html(contents);
-                } else {
+                    //전 내용으로 변경
+                    $(this).closest(".con").find(".contents_div").html(contents_txt);
+                    $(this).prev().html("수정");
+                    $(this).html("삭제");
+                } else if (backbtn == "삭제") {
                     $(this).parent().parent().remove();
                 }
             })
 
-
-            $("hr").append(dcon);
+            $("hr").append(dcon); //<>가 없어야지 UI에 있는 태그를 가져오고, <>가 있다면 새로운 태그를 생성하는 것?
             dcon.append(col1);
             dcon.append(col2);
             col1.append(col1_box);
-            col1_box.append(drow1);
-            col1_box.append(drow2);
+            col1_box.append(writer_div);
+            col1_box.append(contents_div);
             col2.append(modifybtn);
             col2.append(delbtn);
-
-
-
-
         })
-
-
-
-
-
     </script>
-
-
-
-
 </body>
 
 </html>

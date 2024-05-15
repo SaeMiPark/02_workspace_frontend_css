@@ -40,7 +40,7 @@
         //     alert("Hello");
         // });
         $("#del").on("click", function () {
-            let deltxt = $("#deltitle").val();
+            let deltxt = $("#deltitle");
              //선택자로 지우기
              //$(".title:contains('"+deltxt+"')")
             if (deltxt != "") {
@@ -55,9 +55,9 @@
                     //includes 리턴값 true false
                     //indexOf로 한다면 !== -1를 반드시 해줘야한다. 그래야 true,false될 것 
                     //indexOf는 리턴값 찾은 결과의 index
-                    if ($($(tr).children()[0]).text().includes(deltxt)) {
+                    if ($($(tr).children()[0]).html().includes(deltxt.val())) {
                         $(tr).remove();
-                        $("#deltitle").val("");//setter역할도 함
+                        deltxt.val("");//setter역할도 함
                         //return false;
                         // console.log(tr);
                         // return false; //처음 찾는 값만 삭제하기
