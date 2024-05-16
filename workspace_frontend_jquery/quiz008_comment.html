@@ -90,6 +90,7 @@
                 return;
             }
 
+            //동적 요소 만들기
             let dcontainer = $("<div>").addClass("container row");
 
             let dcontents_div = $("<div>").addClass("f-7 col");
@@ -109,7 +110,6 @@
             dbtns_div.append(dmodifybtn, ddelbtn);
             writer_input.val("");
             contents_input.html("");
-
 
             //수정 버튼 기능
             dmodifybtn.on("click", function () {
@@ -131,7 +131,7 @@
 
             //삭제 버튼 기능
             ddelbtn.on("click", function () {
-                let backbtn = $(this).html();
+                let backbtn = $(this).html(); //값을 담기
 
                 if (backbtn == "삭제") {
                     $(this).closest(dcontainer).remove();

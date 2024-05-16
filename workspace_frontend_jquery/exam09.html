@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .border {
+            border: 1px solid black;
+        }
+
+        .big {
+            margin: auto;
+            width: 605px;
+            height: 400px;
+            border: none;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 300px;
+            height: 400px;
+            margin: auto;
+            float: left;
+        }
+
+        .chat_div {
+            height: 80%;
+            overflow: auto;
+            border-bottom: 1px solid black;
+        }
+
+        .chatbox_css {
+            max-width: 50%;
+            background-color: rgb(249, 224, 0);
+            border-radius: 5%;
+            margin-left: 5px;
+            margin-top: 5px;
+            display: inline-block;
+            /*채팅창 글자 길에 맞추기*/
+            word-wrap: break-word;
+            /*숫자와 영어가 넘어가는 문제 해결 */
+        }
+
+        .send_div {
+            height: 20%;
+            display: flex;
+        }
+
+        .text_input {
+            flex: 8;
+            overflow: auto;
+        }
+
+        .econ_btn_box {
+            flex: 2;
+        }
+
+        .econ_btn {
+            width: 100%;
+            height: 100%;
+        }
+
+        .b-blue {
+            background-color: rgb(191,209,229);
+        }
+        .b-skyblue{
+            background-color: rgba(45, 114, 178, 0.491);
+        }
+
+        .b-gray {
+            background-color: lightgray;
+        }
+
+        .f {
+            /*시간 맨 밑에 위치시키기*/
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .econ_container {
+            width: 300px;
+            height: 400px;
+            float: left;
+          
+        }
+
+        .m{
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+
+        .f-9 {
+            flex: 9;
+        }
+
+        .f-1 {
+            flex: 1;
+        }
+
+        .row1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+        }
+
+        .row2 {
+            height: 350px;
+        }
+
+        .col2 {
+            text-align: center;
+        }
+
+        .img_css {
+            width: 20px;
+            height: 20px;
+        }
+
+        .econ_an{
+            float: left;
+        }
+
+        .white_border_b{
+            border-bottom: 3px solid white;
+        }
+
+        .white_border_r{
+            border-right: 3px solid white;
+        }
+
+        .b-white{
+            background-color: white;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <div class="big">
+        <div class="container border">
+            <div class="chat_div b-blue"></div>
+            <div class="send_div">
+                <div class="text_input" contenteditable="true"></div>
+                <div class="econ_btn_box">
+                    <button class="econ_btn">Econ<i class="fa-regular fa-face-smile"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="econ_an">
+            <div class="econ_container container row b-skyblue" data-state="none">
+                <div class="col1 f-9 col ">
+                    <div class="row1 f-1 white_border_b">Emoticons</div>
+                    <div class="row2 f-9 row">
+                        <div class="row2_col1 f-1 col">
+                            <div class="f-1"><img class="imgs" src="놀아줘.png" alt="" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="f-1"><img class="imgs" src="최고.png" alt="" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="f-1"></div>
+                        </div>
+                        <div class="row2_col2 f-1 col">
+                            <div class="f-1"><img class="imgs" src="헤.png" alt="" style="width: 100%; height: 100%">
+                            </div>
+                            <div class="f-1"><img class="imgs" src="흥.png" alt="" style="width: 100%; height: 100%">
+                            </div>
+                            <div class="f-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col2 f-1 b-white">
+                    <button class="del_btn">X</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(function () {
+            $(".econ_container").hide();
+        })
+
+        $(".text_input").on("keydown", function (e) {
+            if (e.key == "Enter") {
+                let dtext_input = $(".text_input");
+
+                if (dtext_input.html() == "") {
+                    alert("메세지를 입력하세요.");
+                    return false;
+                }
+                let dchat_div_box = $("<div>").addClass("dchat_div_box f");
+
+                let dchat_div = $("<div>").addClass("chatbox chatbox_css p border").html(dtext_input.html());
+
+                let time = new Date();
+                let timetext = time.getHours().toString().padStart(2, '0') + ":" + time.getMinutes().toString().padStart(2, '0') + ":" + time.getSeconds().toString().padStart(2, '0');
+
+                dchat_div_box.append(dchat_div, timetext);
+                $(".chat_div").append(dchat_div_box);
+                dtext_input.html("");
+                $(".chat_div").scrollTop($(".chat_div")[0].scrollHeight);
+
+                return false;
+            }
+        })
+
+        $(".econ_btn").on("click", function () {
+            $(".econ_container").show();
+        })
+
+        $(".del_btn").on("click", function () {
+            $(".econ_container").hide();
+        })
+
+        $("img").on("click", function () {
+            let newimg=$(this).clone();
+            newimg.css("width", "80px");
+            $(".text_input").append(newimg);
+        })
+
+    </script>
+
+</body>
+
+</html>
