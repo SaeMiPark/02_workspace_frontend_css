@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <input type="text" placeholder="ID">
+    <button>검증</button>
+    <fieldset>
+        <legend>검증 결과</legend>
+        <div></div>
+    </fieldset>
+
+
+    <script>
+        $("button").on("click", function () {
+            let regex = /[A-Z][a-z0-9_]{6,12}/;
+
+            let result = regex.test($("input").val());
+
+            if (result) {
+                $("div").html("사용 가능한 ID입니다.");
+            } else {
+                $("div").html("불가능한 ID입니다.");
+            }
+        })
+    </script>
+</body>
+
+</html>

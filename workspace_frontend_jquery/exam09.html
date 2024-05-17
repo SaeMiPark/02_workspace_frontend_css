@@ -200,6 +200,14 @@
             $(".econ_container").hide();
         })
 
+        //keydown 손을 올린 순간
+        //keyup 손을 떼는 순간
+        //keypress 
+
+        //손을 올린 순간 하고 싶은거 다 한 다음에
+        //맨마지막에 너가 하고 싶은거 하지마
+        //keyup을 하면 디폴트 엔터값이 들어간다.
+
         $(".text_input").on("keydown", function (e) {
             if (e.key == "Enter") {
                 let dtext_input = $(".text_input");
@@ -220,7 +228,8 @@
                 dtext_input.html("");
                 $(".chat_div").scrollTop($(".chat_div")[0].scrollHeight);
 
-                return false;
+                //e.preventDefault(); //디폴트 값 prevent: 방지하다
+                return false;  //뜻: 기존에 너가 내장하고 있던 동작 하지마
             }
         })
 

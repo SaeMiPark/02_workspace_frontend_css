@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .font_color{
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text"><button>검증</button>
+    <fieldset>
+        <legend>검증결과</legend>
+        <div></div>
+    </fieldset>
+
+    <script>
+        // 프로젝트할 때 나올 수 있는 실수
+        //global로 인해 끝나는 지점부터 다시 검색하면서 flase가 된다.
+        //정규식의 포인터는 맨 왼쪽부터 오른쪽으로 차례대로 검색한다.
+        // let regex = /01[\d]-?\d{4}-?\d{4}/g; 이 위치에 /g까지 있어야 잘못된 코드
+
+        $("button").on("click", function () {
+            let result = regex.test($("input").val());
+
+            if (result) {
+                $("div").addClass("font_color").html("핸드폰번호가 맞습니다.");
+            } else {
+                $("div").addClass("font_color").html("핸드폰번호가 아닙니다.");
+            }
+        })
+    </script>
+
+</body>
+
+</html>

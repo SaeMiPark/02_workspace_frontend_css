@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        let str = "안녕하세요. 저는 sam입니다. 급한 일은 01012341234로 연락주세요.";
+    
+        let regex= /01[\d]-?\d{4}-?\d{4}/;
+
+        let result=regex.test(str);
+
+        if(result){
+            console.log("검색 성공");
+        }else{
+            console.log("검색 실패");
+        }
+    
+    </script>
+
+</body>
+
+</html>
