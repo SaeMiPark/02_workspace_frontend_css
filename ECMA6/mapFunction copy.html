@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const numbers=[1,2,3,4,5];
+
+        // 공통점 반복문
+        // 1. 차이점
+
+        // numbers.forEach((num)=>{
+        //     console.log(num)
+        // })
+        //리턴값이 없이 없어서 undefined라고 뜬다.
+
+        // let result=numbers.map((num)=>{
+        //     return 10 * 10;
+        // })
+        //리턴값을 합쳐서 배열로 리턴한다.
+        //map은 원래 배열을 리턴한다.
+
+        const users = [
+            {id:1,name:"Tom",age:20},
+            {id:2,name:"Sara",age:15},
+            {id:3,name:"Jane",age:30}
+        ];
+
+        //users[], user{}
+        //문제1
+        //객체의 값에 접근하는 방법.
+        
+        let names = users.map((user)=>{
+            return user.name;
+        })
+
+        console.log(names);
+
+
+        let names2 = users.map(user=> user.name)
+
+        //문제2
+        let ages = users.map((user)=>{
+                return {name: user.name , age: user.age};
+        })
+        let ages2 = users.map((user)=>({name: user.name , age: user.age}));
+        console.log(ages2);
+
+        //축약
+        let ages3=users.map(({name, age})=>({name, age}))
+        console.log(ages3);
+
+    </script>
+</body>
+</html>

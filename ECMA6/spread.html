@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //배열과 객체 모두 스프레드 가능
+        const arr1=[1,2,3];
+        const arr2=[4,5,6];
+
+        const arr3=[...arr1]; //흩뿌린 값을 배열에 넣으면 전과 똑같아짐
+        const arr4=[0,...arr1,...arr2,0];
+        console.log(arr4)
+
+        const obj1={a:1,b:2};
+        const obj2={c:3,d:4};
+        // console.log(...obj1)//에러
+        console.log({...obj1, ...obj2, z:99}); //객체 안에서 가능
+        console.log({...obj1, ...obj2, a:99});
+        //만약 같은 키값을 한번 더 하면 덮어씌워지게 된다.
+
+    </script>
+</body>
+</html>

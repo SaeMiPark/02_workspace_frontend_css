@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //filter함수 리턴값 있다.
+        //true, false만
+        const numbers=[1,2,3,4,5];
+        
+        //true인 것만 배열로 들어와서 result를 만든다.
+        //result 는 [2,4]가 된다.
+        //짝수구하는 필터 함수
+        let result = numbers.filter((num)=>{
+            return num%2 == 0;
+        })
+        //약식
+        let result2 = numbers.filter(num=>num%2 == 0);
+
+
+        //2번 문제
+        const words=['Apple','JavaScript','Public'];
+        let result3 = words.filter((word)=>{
+            return word.length>=7;
+        })
+
+        console.log(result3);
+
+        //3번문제
+        const people=   [ { name: 'Alice', age: 25, city: 'New York' },
+            { name: 'Bob', age: 30, city: 'San Francisco' },
+            { name: 'Charlie', age: 35, city: 'New York' },
+            { name: 'Dave', age: 40, city: 'San Francisco' }
+        ];
+
+        let result4= people.filter((person)=>{
+            return person.age>30 && person.city=='New York'
+        })
+
+        console.log(result4);
+
+        //4번 문제 밥을 제외시켜라
+        let result5=people.filter((person)=>{
+            return person.name!='Bob';
+        })
+
+        console.log(result5);
+
+
+
+
+
+    </script>
+</body>
+</html>

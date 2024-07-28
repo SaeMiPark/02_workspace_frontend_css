@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Destructure-->
+
+    <script>
+        const numbers=[1,2,3];
+        const [a,b,c,d=10]=numbers
+
+        const person={id:1001, name:"Tom"};
+        const {id, name}=person
+        console.log(`${id} : ${name}`)
+
+        function func([a,b,c]){
+            console.log(a,b,c);
+        }
+
+        func(numbers);
+
+        function func2({id,name}){
+            console.log(id,name);
+        }
+
+        func2(person)
+
+
+
+    </script>
+</body>
+</html>
